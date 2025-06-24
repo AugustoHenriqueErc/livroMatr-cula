@@ -1,7 +1,3 @@
-
-package List;
-import book.Student;
-
 public class Cell {
     Student value;
     Cell next;
@@ -24,7 +20,7 @@ public class Cell {
         return next;
     }
 
-    public Object getValue() {
+    public Student getValue() {
         return value;
     }
 

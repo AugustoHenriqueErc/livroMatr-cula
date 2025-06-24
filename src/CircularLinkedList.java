@@ -1,7 +1,3 @@
-package List;
-
-import book.Student;
-
 public class CircularLinkedList {
     private Cell tail;
     private Cell head;
@@ -70,6 +66,31 @@ public class CircularLinkedList {
             aux = aux.getNext();
         }while (aux != head);
         return sb.toString();
+    }
+
+    public void print(String course)
+    {
+        Cell aux = head;
+        StringBuilder sb = new StringBuilder();
+        do
+        {
+            if(course == aux.getValue().getCourse()) sb.append(aux.toString()).append(" | ");
+            aux = aux.getNext();
+        }while (aux != head);
+        System.out.println(sb.toString());
+    }
+
+    public void print(int ID)
+    {
+        Cell aux = head;
+        StringBuilder sb = new StringBuilder();
+        do
+        {
+            if(ID == aux.getValue().getID()) sb.append(aux.toString()).append(" | ");
+            aux = aux.getNext();
+        }while (aux != head);
+        System.out.println(sb.toString());
+
     }
 
 }

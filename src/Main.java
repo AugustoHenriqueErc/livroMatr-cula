@@ -1,6 +1,3 @@
-import List.CircularLinkedList;
-import book.Student;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -11,11 +8,12 @@ public class Main {
 
         CircularLinkedList l1 = new CircularLinkedList();
         l1.insertEnd(s1);
-        l1.insertEnd(s2);
-        l1.insertEnd(s3);
+        l1.insertFirst(s2);
+        l1.insertFirst(s3);
         l1.insertEnd(s4);
 
-        System.out.print(l1);
+        System.out.println(l1);
+
 
     }
 }

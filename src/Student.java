@@ -1,5 +1,4 @@
-package book;
-
+import java.util.Arrays;
 import java.util.Date;
 public class Student
 {
@@ -42,7 +41,7 @@ public class Student
         return ID;
     }
 
-    public void setID()
+    private void setID()
     {
         GENERAL_ID++;
         this.ID = GENERAL_ID;
@@ -50,9 +49,11 @@ public class Student
 
     public String setContact(int ID, String name)
     {
-        name.trim();
         StringBuilder sb = new StringBuilder();
-        sb.append(name).append("_").append(ID).append("@email.com");
+        name = name.trim();
+        String []nameArray = name.split(" ");
+        if(nameArray.length != 1) sb.append(nameArray[0]).append(nameArray[nameArray.length-1]).append(ID).append("@academico.edu.com");
+        else sb.append(name).append("_").append(ID).append("@academico.edu.com");
         return sb.toString();
     }
 
@@ -61,6 +62,16 @@ public class Student
         StringBuilder sb  = new StringBuilder();
         sb.append(date.getDay() + 22).append("/").append(date.getMonth() + 1).append("/").append(date.getYear() + 1900);
         return sb.toString();
+    }
+
+    public void changeID(int ID)
+    {
+        this.ID = ID;
+    }
+
+    public void changeConact(String contact)
+    {
+        this.contact = contact;
     }
 
     @Override
